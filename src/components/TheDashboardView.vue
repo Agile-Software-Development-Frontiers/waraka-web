@@ -52,22 +52,10 @@ watch(route, updateBreadcrumbs, { immediate: true });
   <div class=" flex flex-col  min-w-full  h-full items-center">
 <!--    h-[70px]-->
       <div class=" border-b w-full flex items-center justify-between gap-4 px-4">
-        <div class="h-[70px] md:flex items-center border-b hidden ">
-          <el-button class="w-[40px] bg-amber-600"
-                     @click="store.state.sideNavCollapse = !store.state.sideNavCollapse">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5" />
-            </svg>
-          </el-button>
-        </div>
-
-        <div class="border-b h-[70px]  flex items-center  text-center text-2xl font-bold text-[#fc7c04]">
-          <!--      <img class="" src="@/assets/Kejamove_Logo1x.png">-->
-          KEJA<span class="text-gray-800">MOVE</span> <span class="mx-2 text-gray-500 italic hidden">crm</span>
+        <div class="border-b h-[80px] w-32  flex items-center justify-center  text-center text-2xl font-bold text-[#fc7c04]">
+                <img class="h-16 w-auto" src="/logo1.png">
 
         </div>
-
-
 
         <div class="w-full flex items-center justify-end md:justify-between h-fit p-0">
           <el-breadcrumb :style="breadcrumbStyle" separator="/" class="hidden md:block">
@@ -89,7 +77,7 @@ watch(route, updateBreadcrumbs, { immediate: true });
               <!--            <div size="default" class="cursor-pointer font-extrabold flex gap-2 h-12 px-2  w-fit rounded text-white items-center justify-center"  >-->
               <!--              <span>{{authData?.user?.first_name[0]}}</span> <span>{{authData?.user?.last_name[0]}}</span>-->
               <!--            </div>-->
-              <div class=" font-bold bg-[#fc7c04] rounded-full h-[3rem] w-[3rem] p-2 flex items-center justify-center cursor-pointer text-[#fc7c04]">
+              <div class=" font-bold bg-purple-950 rounded-full h-[3rem] w-[3rem] p-2 flex items-center justify-center cursor-pointer text-[#fc7c04]">
                 <div class="flex p-0 items-center w-full h-fit mt-2  text-center  text-white justify-center ">
                   {{authData?.user?.first_name[0]}} {{authData?.user?.last_name[0]}}
                 </div>
@@ -157,6 +145,7 @@ watch(route, updateBreadcrumbs, { immediate: true });
       </div>
     </div>
     <TheSideNav v-if="store.state.ShowMobileMenu"/>
+
 
   </div>
 </template>

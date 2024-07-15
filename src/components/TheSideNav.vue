@@ -56,7 +56,7 @@ const themeStyle = computed(() => {
 
 <template>
 
-  <div class="hidden md:flex flex-col gap-4 w-fit h-full border-r" >
+  <div class="hidden md:flex flex-col justify-between gap-4 w-fit h-full border-r" >
 
 <!--
         v-if="authData?.user?.user_type === 'admin'"
@@ -79,19 +79,14 @@ const themeStyle = computed(() => {
     </el-menu>
 
 
-    <el-menu
-        default-active="1"
-        v-if="authData?.user?.user_type === 'store_owner'"
-        class="el-menu-vertical-demo "
-        style="border: none;"
-        :collapse="store.state.sideNavCollapse"
-        @open="handleOpen"
-        @close="handleClose"
-        @select="navigateToSelectedPage"
-    >
-      <StoreOwnerLinks/>
-    </el-menu>
-
+    <div class="h-[70px] md:flex items-center border-b hidden w-full justify-start px-6 ">
+      <el-button class="w-[40px]" type="primary"
+                 @click="store.state.sideNavCollapse = !store.state.sideNavCollapse">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5" />
+        </svg>
+      </el-button>
+    </div>
   </div>
 
   <!--    MOBILE NAV -->

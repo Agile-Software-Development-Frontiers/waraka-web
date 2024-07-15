@@ -6,7 +6,7 @@
     class="w-full flex flex-col gap-4"
     label-position="top"
   >
-    <div class="flex gap-2 items-center">
+    <div class="flex gap-2 items-center ">
       <h1 class="font-bold text-4xl ">Mabarua</h1>
     </div>
 

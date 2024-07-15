@@ -10,6 +10,7 @@ const googleCallback = ()=>{
 
 <template>
   <AuthWrapper>
+<!--    <img src="/logo.png" alt="logo" class="h-40 w-fit">-->
     <LoginForm/>
   </AuthWrapper>
 </template>

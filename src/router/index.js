@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import LoginView from "../views/auth/view/LoginView.vue"
 import RegisterView from "../views/auth/view/RegisterView.vue"
 import TheDashboardView from "../components/TheDashboardView.vue";
+import UserProfile from "@/views/UserProfile.vue";
 
 const routes = [
   {
@@ -33,7 +34,14 @@ const routes = [
     },
 
     children :[
-
+      {
+        name:'profile',
+        path: 'profile',
+        component: UserProfile,
+        meta: {
+          slug: 'User Profile',
+        },
+      },
     ]
   },
 
