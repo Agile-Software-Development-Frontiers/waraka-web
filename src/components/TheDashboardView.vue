@@ -12,7 +12,8 @@ import {watch, computed} from "vue"
 
 const breadcrumbStyle = computed(() => {
   return {
-    'separator-color': store.getters.getLightMode ? '#ffd04b' : '#ffd04b'
+    'separator-color': store.getters.getLightMode ? '#ffd04b' : '#ffd04b',
+    'color': 'white'
     // Add any other breadcrumb styles here if needed
   };
 });
@@ -21,8 +22,9 @@ const routerViewStyle = computed(() => {
   return {
     // Add dynamic styles based on the theme
     color: store.getters.getLightMode ? 'gray' : 'white',
-    backgroundColor: store.getters.getLightMode ? 'white' : 'gray',
-    // Add any other styles you want to apply
+    // backgroundColor: store.getters.getLightMode ? 'transparent' : 'gray',
+    backgroundColor: 'rgba(255, 255, 255, 0.6)',
+    padding: '1rem',
   };
 });
 
@@ -47,13 +49,13 @@ watch(route, updateBreadcrumbs, { immediate: true });
 </script>
 
 <template>
-  <div class="h-full min-w-screen max-w-screen-md" style="max-width: 100vw">
+  <div class="h-full bg-[url('/bg4.jpg')] min-w-screen max-w-screen-md" style="max-width: 100vw">
 
   <div class=" flex flex-col  min-w-full  h-full items-center">
 <!--    h-[70px]-->
       <div class=" border-b w-full flex items-center justify-between gap-4 px-4">
         <div class="border-b h-[80px] w-32  flex items-center justify-center  text-center text-2xl font-bold text-[#fc7c04]">
-                <img class="h-16 w-auto" src="/logo1.png">
+                <img class="h-16 w-auto" src="/logo-white.png">
 
         </div>
 
@@ -129,7 +131,7 @@ watch(route, updateBreadcrumbs, { immediate: true });
           <TheSideNav/>
         </div>
 
-        <div :style="routerViewStyle" class="flex-1 p-4 bg-gray-50 overflow-x-hidden overflow-y-auto h-full ">
+        <div :style="routerViewStyle" class="flex-1 p-4 bg-gray-50 overflow-x-hidden overflow-y-auto h-full text-white">
           <el-breadcrumb separator="/"
                          :style="breadcrumbStyle"
                          class="md:hidden" >
