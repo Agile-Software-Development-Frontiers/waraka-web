@@ -14,16 +14,16 @@ const breadcrumbStyle = computed(() => {
   return {
     'separator-color': store.getters.getLightMode ? '#ffd04b' : '#ffd04b',
     'color': 'white'
-    // Add any other breadcrumb styles here if needed
   };
 });
 
 const routerViewStyle = computed(() => {
   return {
     // Add dynamic styles based on the theme
-    color: store.getters.getLightMode ? 'gray' : 'white',
-    // backgroundColor: store.getters.getLightMode ? 'transparent' : 'gray',
-    backgroundColor: 'rgba(255, 255, 255, 0.6)',
+    // color: store.getters.getLightMode ? 'gray' : 'white',
+    // color: 'white',
+    // backgroundColor  : store.getters.getLightMode ? 'transparent' : 'gray',
+    backgroundColor: 'rgba(255, 255, 255, 0.7)',
     padding: '1rem',
   };
 });
@@ -134,10 +134,12 @@ watch(route, updateBreadcrumbs, { immediate: true });
         <div :style="routerViewStyle" class="flex-1 p-4 bg-gray-50 overflow-x-hidden overflow-y-auto h-full text-white">
           <el-breadcrumb separator="/"
                          :style="breadcrumbStyle"
-                         class="md:hidden" >
+                         class="md:hidden text-white" >
             <el-breadcrumb-item v-for="(breadcrumb, index) in breadcrumbs" :key="index">
-              <span v-if="breadcrumb?.label === 'Dashboard' || breadcrumb?.label === 'dashboard'">Dashboard </span>
-              <router-link v-else :to="breadcrumb.path">{{ breadcrumb.label }}</router-link>
+              <span class="text-white" v-if="breadcrumb?.label === 'Dashboard' || breadcrumb?.label === 'dashboard'">Dashboard </span>
+              <router-link class="text-white" v-else :to="breadcrumb.path">
+                <span class="text-white">{{ breadcrumb.label }}</span>
+              </router-link>
             </el-breadcrumb-item>
           </el-breadcrumb>
 

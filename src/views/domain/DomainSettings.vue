@@ -3,7 +3,8 @@
 </script>
 
 <template>
-  Domain Settings Page
+  Domain Settings Pageffmfm
+  dd
   <router-view/>
 </template>
 
